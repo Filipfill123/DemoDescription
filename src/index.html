@@ -46,9 +46,9 @@
                 </div>
             </div>
             <div class="panel">
-                <div class="panel-body" style="margin-top: -5px; font-size: large;">
+                <div class="panel-body" style="margin-top: -5px">
                     <div>SLU</div>
-                    <div id="logSLU" style="margin-top: -5px; font-size: large;"></div>
+                    <div id="logSLU" style="margin-top: -5px"></div>
                 </div>
             </div>
           </div>
@@ -130,7 +130,13 @@
             /* Při příchodu SLU výsledku */
             speechCloud.on('slu_entities', function (msg) {
                 console.log("slu msg result: ", msg.entities[0].values[0])
-                hlogSlu("SLU result: "+ msg.entities[0].values[0])
+                if(msg.entities[0].values[0]){
+                    hlogSlu("SLU result: "+ msg.entities[0].values[0])
+                }
+                else{
+                    hlogSlu("SLU result: undefined")
+                }
+                
             });
 
         })
