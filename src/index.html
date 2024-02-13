@@ -128,9 +128,9 @@
 
             });
             /* Při příchodu SLU výsledku */
-            speechCloud.on('slu_result', function (msg) {
+            speechCloud.on('slu_entities', function (msg) {
                 console.log("slu msg result: ", msg.result)
-                hlogSlu("SLU result: "+ msg.result)
+                //hlogSlu("SLU result: "+ msg.result)
             });
 
         })
