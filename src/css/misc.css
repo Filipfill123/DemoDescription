@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  /* font-family: Arial, sans-serif; */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.content {
+  position: relative;
+  margin-top: 20px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  transform: translateX(-10%);
+  height: 55%;
+  width: 60%;
+}
+
+.image-container {
+    margin-top: 0px;
+    text-align: center; /* Center the image horizontally */
+
+  }
+  
+  .image-container img {
+    margin-left: 25%; /* Move the image a bit to the left */
+  }
+  
+  .panels-container {
+    display: flex;
+    justify-content: center; /* Center the panels horizontally */
+  }
+  
+  .panel {
+    width: 60%; /* Adjust the width as needed */
+    margin: 20px 5px; /* Add some spacing between the panels */
+    background-color: #f9f9f9;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-height: 125px;
+  }
+
+
+  #logSLU {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 5em;
+}
+
+#logASR {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 5em;
+}
