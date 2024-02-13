@@ -129,7 +129,7 @@
             });
             /* Při příchodu SLU výsledku */
             speechCloud.on('slu_entities', function (msg) {
-                console.log("slu msg result: ", msg)
+                console.log("slu msg result: ", msg.entities[0].values)
                 //hlogSlu("SLU result: "+ msg.result)
             });
 
