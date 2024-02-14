@@ -42,6 +42,7 @@ img {
   }
   
   .panels-container {
+    margin-top: 30px;
     display: flex;
     justify-content: center; /* Center the panels horizontally */
   }
