@@ -53,6 +53,18 @@ function stopButton() {
         speechCloud.asr_pause()
         stopButtonClicked = true  
         recognizing = false  
+
+        Swal.fire({
+            title: 'Konec testu',
+            text: 'Po stisknutí OK se refreshne stránka',
+            position: 'top',
+            customClass: 'custom-swal-modal', // Apply your custom class
+            allowOutsideClick: false,
+            showConfirmButton: true,
+            confirmButtonText: "Ok"
+          }).then(() => {
+            location.reload()
+          });
     }
     
 }
@@ -77,6 +89,8 @@ function startTimer() {
         if (--timer < 0) {
             console.log(`duration done..`)   
             clearInterval(countdown);
+            speechCloud.asr_pause()
+            recognizing = false;
             appReset()
             }
     }, 1000);}
