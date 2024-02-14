@@ -30,7 +30,9 @@
         <div class="header">
           <button id="startButton" onclick="startButton()">Start</button>
           <button id="stopButton" onclick="stopButton()">Stop</button>
-          <div id="countdown">
+            
+          <div id="container_countdown_animals">
+            <span id="said_animals" style="margin-top: 10px; margin-left: 15px; font-size: large;">0</span>
             <span id="countdown" style="margin-top: 10px; margin-left: 25px; font-size: large;">30s</span>
           </div>
         </div>
@@ -132,6 +134,9 @@
                 console.log("slu msg result: ", msg.entities[0].values[0])
                 if(msg.entities[0].values[0]){
                     hlogSlu("SLU result: "+ msg.entities[0].values[0])
+                    var number = said_animals.innerHTML;
+                    number++;
+                    said_animals.innerHTML = number;
                 }
                 else{
                     hlogSlu("SLU result: undefined")
