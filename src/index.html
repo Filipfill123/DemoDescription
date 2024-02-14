@@ -28,8 +28,8 @@
 <body>
     <div class="container">
         <div class="header">
-          <button id="startButton" onclick="startButton()">Start</button>
-          <button id="stopButton" onclick="stopButton()">Stop</button>
+          <button id="startButton" onclick="startButton()" disabled>Start</button>
+          <button id="stopButton" onclick="stopButton()" disabled>Stop</button>
             
           <div id="container_countdown_animals">
             <span id="said_animals" style="margin-top: 10px; margin-left: 15px; font-size: large;">0</span>
@@ -92,6 +92,8 @@
             speechCloud.on('asr_ready', function () {
                 // po pripojeni na ASR se odblokuje tlacitko Registrovat
                 console.log("speechCloud clientId: " + speechCloud.config["client_id"])
+                document.getElementById("startButton").disabled = false;
+                document.getElementById("stopButton").disabled = false;
             });
 
 
