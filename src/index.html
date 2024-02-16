@@ -135,8 +135,10 @@
             speechCloud.on('slu_entities', function (msg) {
                 console.log("slu msg result: ", msg.entities[0].values[0])
                 if(msg.entities[0].values[0]){
+                    var entityAndWordSaid = msg.entities[0].values[0].split(":")
+                    var entity = entityAndWordSaid[1]
                     //hlogSlu(msg.entities[0].values[0])
-                    hlogSlu("pes")
+                    hlogSlu(entity)
                     var number = said_animals.innerHTML;
                     number++;
                     said_animals.innerHTML = number;
