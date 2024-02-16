@@ -123,11 +123,11 @@
 
                 if (msg.partial_result) {
                     console.log("asr msg partial result: ", msg.partial_result)
-                    hlogAsr("ASR partial result: " + msg.partial_result)
+                    hlogAsr(msg.partial_result)
                 }
                 else if(msg.result){
                     console.log("asr msg result: ", msg.result)
-                    hlogAsr("ASR full result: "+ msg.result)
+                    hlogAsr(msg.result)
                 }
 
             });
@@ -135,13 +135,14 @@
             speechCloud.on('slu_entities', function (msg) {
                 console.log("slu msg result: ", msg.entities[0].values[0])
                 if(msg.entities[0].values[0]){
-                    hlogSlu("SLU result: "+ msg.entities[0].values[0])
+                    //hlogSlu(msg.entities[0].values[0])
+                    hlogSlu("pes")
                     var number = said_animals.innerHTML;
                     number++;
                     said_animals.innerHTML = number;
                 }
                 else{
-                    hlogSlu("SLU result: undefined")
+                    hlogSlu("undefined")
                 }
                 
             });
