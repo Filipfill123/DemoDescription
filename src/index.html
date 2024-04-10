@@ -138,15 +138,14 @@
                 if(msg.entities[0].values){
                     for (const value of msg.entities[0].values){
                         console.log("slu msg result value: ", value)
-
+                        var entityAndWordSaid = value.split(":")
+                        var entity = entityAndWordSaid[1]
+                        //hlogSlu(msg.entities[0].values[0])
+                        hlogSlu(entity)
+                        var number = said_animals.innerHTML;
+                        number++;
+                        said_animals.innerHTML = number;
                     }
-                    var entityAndWordSaid = msg.entities[0].values[0].split(":")
-                    var entity = entityAndWordSaid[1]
-                    //hlogSlu(msg.entities[0].values[0])
-                    hlogSlu(entity)
-                    var number = said_animals.innerHTML;
-                    number++;
-                    said_animals.innerHTML = number;
                 }
                 else{
                     hlogSlu("undefined")
