@@ -135,7 +135,11 @@
             speechCloud.on('slu_entities', function (msg) {
                 console.log("slu msg result whole: ", msg.entities[0])
                 console.log("slu msg result polib si prdel: ", msg.entities[0].values[0])
-                if(msg.entities[0].values[0]){
+                if(msg.entities[0].values){
+                    for (const value of msg.entities[0].values){
+                        console.log("slu msg result value: ", value)
+
+                    }
                     var entityAndWordSaid = msg.entities[0].values[0].split(":")
                     var entity = entityAndWordSaid[1]
                     //hlogSlu(msg.entities[0].values[0])
@@ -146,6 +150,10 @@
                 }
                 else{
                     hlogSlu("undefined")
+                }
+
+                if(msg.entities[0].values){
+
                 }
                 
             });
